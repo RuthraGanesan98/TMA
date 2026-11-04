@@ -214,7 +214,7 @@ Update the MySQL connection URL in `database.py` or your environment configurati
 Example:
 
 ```text
-mysql+pymysql://root:password@localhost:3306/tma
+mysql+pymysql://root:password@localhost:3306/task_manager
 ```
 
 ### Initialize and run migrations
@@ -274,29 +274,32 @@ Database migrations are managed separately through Alembic.
 ```text
 TMA/
 │
-├── main.py
-├── database.py
-├── models.py
-├── schemas.py
+├── app/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   │
+│   ├── crud/
+│   │   ├── user.py
+│   │   ├── project.py
+│   │   └── task.py
+│   │
+│   ├── routers/
+│   │   ├── user.py
+│   │   ├── project.py
+│   │   └── task.py
+│   │
+│   ├── utils/
+│   │   └── security.py
+│   │
+│   ├── alembic/
+│   │   ├── versions/
+│   │   └── env.py
+│   │
+│   └── alembic.ini
 │
-├── crud/
-│   ├── user.py
-│   ├── project.py
-│   └── task.py
-│
-├── routers/
-│   ├── user.py
-│   ├── project.py
-│   └── task.py
-│
-├── utils/
-│   └── security.py
-│
-├── alembic/
-│   ├── versions/
-│   └── env.py
-│
-├── alembic.ini
+├── requirements.txt
 └── README.md
 ```
 
